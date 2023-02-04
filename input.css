@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes animatetop {
+    from {top: -100px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+  }
+
+@keyframes animatebot {
+    from {bottom: 0px; opacity: 1;}
+    to {bottom: -100px; opacity: 0;}
+  }
+
+@keyframes glitch {
+    1% {opacity: 0;}
+    20% {bottom: 50%; right: 20%;}
+    21% {opacity: 100;}
+    22% {opacity: 0;}
+    40% {left: 33%; top: 28%;}
+    41% {opacity: 100;}
+    42% {opacity: 0;}
+    70% {left: -80%; top: -50%;}
+    71% {opacity: 100;}
+    75% {opacity: 0;}
+    80% {left: 80%; top: 50%;}
+    81% {opacity: 100;}
+    85% {opacity: 0;}
+    99% {top: 0px; bottom: 0px; left: 0px; right: 0px;}
+    100% {opacity: 100;}
+  }
+
+
+@keyframes progressBar {
+  from {width: 1%;}
+  to {width: 100%;}
+}
+
+.mapbutton{
+    @apply border border-neutral-300 shadow active:shadow-none
+     px-1 py-3 rounded ml-3 mr-3 mb-1
+     w-5/6
+}
+
+/* Remove Space added by cloudflare iframe  */
+#body > iframe:nth-child(6) {
+  display: none !important;
+}

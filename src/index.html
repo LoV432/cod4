@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <title>COD4 Maps</title>
+  <meta name="description" content="Download COD4 Maps">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#000000"/>
+  <link rel="apple-touch-icon" href="icons/favicon-0.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link href="output.css" rel="stylesheet">
+</head>
+<body id="body" class="h-full w-full bg-black bg-center bg-contain bg-no-repeat">
+
+  <div class="h-full grid place-items-center">
+
+    <div id="buttons" class="w-full text-center mb-10">
+
+      <button  id="mapbutton" onmouseover="loadMaps()" onclick="mapbutton()" class="text-rose-800 text-xl hover:text-white
+       border-rose-800  hover:bg-rose-900 transition ease-in-out border-2
+       w-1/3 max-w-[13rem] h-14 mr-5 rounded-lg">Maps</button>
+
+      <button  id="modbutton" onclick="modbutton()" class="text-rose-800 text-xl hover:text-white
+       border-rose-800  hover:bg-rose-900 transition ease-in-out border-2
+       w-1/3 max-w-[13rem] h-14 ml-5 rounded-lg">Mods</button>
+
+    </div>
+
+    <div id="modal" class="fixed z-2 overflow-auto w-full h-full place-items-center hidden">
+      <div id="modalcontent" class="w-4/5 max-w-2xl h-fit pb-3 bg-white rounded-md text-gray-600">
+        <div class="mb-5
+          w-full h-[4rem]
+          border-b border-neutral-300">
+            <p id="modaltitle" class="float-left h-full
+            font-mono text-2xl px-5 py-4">Maps</p>
+            <a href="#" id="closebutton" class="float-right h-full
+            font-semibold text-2xl px-5 py-3.5" >&times;</a>
+        </div>
+        <div id="mapslist" class="hidden grid-cols-1 place-items-center sm:grid-cols-3 text-center max-h-[35rem] overflow-auto">
+
+
+        </div>
+        <div id="modslist" class="hidden grid-cols-1 place-items-center sm:grid-cols-3 text-center">
+          <a href="/fastdl/zips/%5e1Redline_promod.zip" class="mapbutton bg-red-300 hover:bg-red-400 text-red-700">Redline Promod</a>
+          <a href="/fastdl/zips/%5e1Redline_gungame.zip" class="mapbutton bg-green-300 hover:bg-green-400 text-green-700">Redline Gungame</a>
+          <a href="/fastdl/zips/%5e1Redline_infected.zip" class="mapbutton bg-blue-300 hover:bg-blue-400 text-blue-700">Redline Infected</a>
+        </div>
+      </div>
+    </div> 
+
+    <div id="noddlesmodal" class="fixed z-3 overflow-auto w-full h-full place-items-center hidden">
+
+      <div id="noddlesmodalbg" class="w-96 h-40 rounded-md flex flex-row flex-wrap pointer-events-none">
+        <div class="bg-red-700 basis-1/3 rounded-tl-md pointer-events-none"></div>
+        <div class="bg-green-400 basis-1/3 pointer-events-none" ></div>
+        <div class="bg-purple-600 basis-1/3 rounded-tr-md pointer-events-none"></div>
+        <div class="bg-amber-800 basis-1/3 pointer-events-none"></div>
+        <div class="bg-rose-900 basis-2/3 pointer-events-none"></div>
+        <div class="bg-pink-600 basis-4/6 rounded-bl-md pointer-events-none" ></div>
+        <div class="bg-blue-500 basis-1/6 pointer-events-none"></div>
+        <div class="bg-purple-600 basis-16 rounded-br-md pointer-events-none"></div>
+      </div>
+
+    <div id="noddlesmodalcontent" class="fixed z-4 overflow-auto w-full h-full place-items-center grid">
+
+
+      <div class="w-96 h-40 bg-transparent rounded-md">
+        <div class="mb-5
+        w-full h-[2.5rem]
+        border-b border-neutral-300">
+          <p id="modalPasswordtitle" class="float-left h-full
+          font-semibold text-lg px-5 py-2">ك̵̹̬̳̽̀̈́̌͘ل̶̪͐̎̏̆̎́م̴̻̻̺͖̳͋͌͘ة̷̡̛̛͔͕̦̫̟́͊͂̂̈́̊́̑̿̚ͅ ̸̡͈̝͚͔̩̉̿͂͋͝͠س̸̨̡̢̰͕͇͕̤̠̼̮̄̉̽̒̐̕ر̷̧̛̤̘̗̬͖̂ي̵̫̜͈̩͕̻̑̐̏͗̽͐͠͝͝ة̵̢̲̯̮̺̺̙͔͇͜͝</p>
+          <a id="closenoddlesmodal" href="#" class="float-right h-full
+          font-semibold text-2xl px-5 py-0.5" >&times;</a>
+        </div>
+
+        <div data-placeholder="?̶̡̎́͜?̵̜͉͛͗̎?̷̡͆́?̷̛͖̣̮̔̂?̷͔̅͘?̴̬̠̀̇͑?̸͇͚̓͊̎?̶̥͊̚?̶̞͓͎̎̎?̸̢̯̲̃?̴̜͉̖̂̏̄?̴̧͓͛͠͠?̷̖̅?̷̦̾̃̌?̷̢̗̀̀̕?̶̧͌̍?̵̨̬͎̐?̷̫̯͆̀̒?̷̠͍̐?̸̘͈̒̕?̴̺̻̒?̵͚̹͓̽͌̍?̴̠̣̅̊͂?̸͓̇̕͜?̸̣͐̆?̶̢̭̤̋̾?̸̮͚̗̀̈́̈́?̸̢̻̈́?̵͍̕ͅ?̷̱̅?̶̟̉̍͌?̵̞̬́͜?̸̭͋͘?̶̛͇̓?̶̭̏̐̚?̶̻̝̲̈́?̴̜̹͛̍̕ͅ?̷̡̰́?̸̗̥͐͝" class="grid place-items-center relative after:content-[attr(data-placeholder)] after:left-[6.8rem] after:opacity-40 after:top[2px] after:pointer-events-none after:absolute">
+        <input id="noddlesinput" class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight 
+        focus:outline-none focus:shadow-gray-400 ease-in-out" id="username" type="text">
+        </div>
+
+        <div class="grid place-items-center mt-3">
+        <button id="noddlessubmit" class="shadow bg-red-800 hover:bg-purple-800 hover:text-red-900 focus:shadow-outline focus:outline-none
+         text-white font-bold py-2 px-4 rounded" type="button">
+         D̵̛͎̟͓̠̣͍͉͈͎͇̀Ơ̶̦̖̲̼̠̰̭͓̺̹̌̂̀̄N̴̹͕̲̲̥͍̹̰̹̽̀̈́́̽̂̓̂̆͘T̴̡̛̟̜͉̣̟̉͂̃̌͆͌͗̀ ̶̟̻͚͈͈͊̈́̌̍̃̐̚D̵͔̳̟͈͓͕̼͓̫͙̭͑̈̌͗̆̈́̕͝Ȯ̸̹̀͛͗̈̇̍̊̾̓ ̴͕̖͎͋͋͑̓͐̃̚ͅI̵͈̖̩͗̀̽ͅT̴̻̦͙͓̺͝
+        </button>
+        </div>
+
+      </div>
+
+    </div>
+  
+    </div>
+
+  </div>
+  <script src="directory.js"></script>
+  <script src="md5/md5.min.js"></script>
+  <script src="modal.js"></script>
+</body>
+</html>
